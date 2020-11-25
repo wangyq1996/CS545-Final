@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weitao Su's Profolio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/user.css">
+</head>
+
+<body>
+    <header>
+        <div class="navbar navbar-dark bg-dark shadow-sm">
+            <div class="container d-flex justify-content-between">
+                <a class="navbar-brand" href="/main">Ticket</a>
+                <div>
+                    <span class="username" id="username"></span>
+                    <a href="main" class="btn-sm btn-outline-secondary top-btn" role="button">Main</a>
+                    <a href="#" id="logoutBtn" class="btn-sm btn-outline-secondary top-btn" role="button">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="navbar">
+            <ul>
+                <li id="personalInfoBtn" data-id="#infopage" class="active">Personal Information</li>
+                <li id="passwordBtn" data-id="#password">Change Password</li>
+            </ul>
+        </div>
+        <div class="container">
+            <div id="password">
+                <form class="passwordChangePage" id="passwordChange">
+                    <div class="row mt-5">
+                        <div class="col-4 ml-3 aside">
+                            <label for="old-password">Old Password</label>
+                        </div>
+                        <div class="input-group col-5">
+                            <input type="password" class="form-control" id="old-password" name="old-password" value="">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-4 ml-3 aside">
+                            <label for="new-password">New Password</label>
+                        </div>
+                        <div class="input-group col-5">
+                            <input type="password" class="form-control" id="new-password" name="new-password" value="">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-4 ml-3 aside">
+                            <label for="re-enter-password">Confirm Password</label>
+                        </div>
+                        <div class="col-5">
+                            <input type="password" class="form-control" id="re-enter-password" name="re-enter-password" value="">
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col-4 ml-3"></div>
+                        <div class="col-5">
+                            <button class="btn btn-primary" id="changePasswordBtn" disabled type="submit">
+                                Change Password
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div id="infopage">
+                <div class="row mt-5 upload-container">
+                    <div class="col-4 ml-3 aside">
+                        <div class="imgCover">
+                            <img hidden class="img" id="avatar" alt="Profile Photo">
+                        </div>
+                    </div>
+                    <div class="input-group col-5">
+                        <form action="/users/avatar" method="post" id="imageUploadForm" enctype="multipart/form-data">
+                            <div class="userbar-name" id="userbar-name">
+                                userid
+                            </div>
+                            <div class="userbar-age&gender" id="userbar-age_gender">
+                                age
+                            </div>  
+                            <p class="changeAvatarBtn">Change Avatar</p>
+                            <input class="form-control-file d-none" type="file" id="imageUpload" accept="image/*" name="photo" >
+                        </form>
+                    </div>
+                </div>
+                <form class="personalinfoPage" id="personalInfo">
+                    <div class="row mt-3">
+                        <div class="col-4 ml-3 aside">
+                            <label for="form-username">Username</label>
+                        </div>
+                        <div class="input-group col-5">
+                            <input type="text" class="form-control" id="form-username" name="form-username" value="">
+                        </div>
+                    </div>
+                    <div class="row mt-1">
+                        <div class="col-4 ml-3 aside"></div>
+                        <div class="input-group col-5">
+                            <div class="hidden" id="userNameRule">
+                                User name is already exisited Or not following the rule:
+                                3-16 characters, only contains lower case words, upper case words and numbers
+                            </div>
+                        </div>
+                    </div>
+                    {{!-- Gender --}}
+                    <div class="row mt-3">
+                        <div class="col-4 ml-3 aside">
+                            <label for="gender">Gender</label>
+                        </div>
+                        <div class="col-3 genderContainer">
+                            <select class="custom-select" id="form-gender" name="form-gender">
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Unknown</option>
+                            </select>
+                        </div>
+                    </div>
+                    {{!-- Birth Date --}}
+                    <div class="row mt-3">
+                        <div class="col-4 ml-3 aside">
+                            <label for="month">Birth Date</label>
+                        </div>
+                        <div class="input-group col-5">
+                            <input type="date" id="form-birthdate" name="form-birthdate" min="1990-01-01" max="">
+                        </div>
+                    </div>
+                    {{!-- Bio --}}
+                    <div class="row mt-3">
+                        <div class="col-4 ml-3 aside">
+                            <label for="form-bio">Bio</label>
+                        </div>
+                        <div class="input-group col-5">
+                            <textarea class="form-control" id="form-bio" name="form-bio" placeholder="Describe yourself!"></textarea>
+                        </div>
+                    </div>
+                    {{!-- Email --}}
+                    <div class="row mt-3">
+                        <div class="col-4 ml-3 aside">
+                            <label for="form-email">Email</label>
+                        </div>
+                        <div class="input-group col-5">
+                            <input type="email" class="form-control" id="form-email" name="form-email" value="">                        
+                        </div>
+                    </div>
+                    <div class="row mt-1">
+                        <div class="col-4 ml-3 aside"></div>
+                        <div class="input-group col-5">
+                            <div class="hidden" id="emailRule">
+                                Email can not be empty/ Invalid/Existed Email
+                            </div>
+                        </div>
+                    </div>
+                    {{!-- Phone Number --}}
+                    <div class="row mt-3">
+                        <div class="col-4 ml-3 aside">
+                            <label for="form-phonenumber">Phone Number</label>
+                        </div>
+                        <div class="input-group col-5">
+                            <input type="text" class="form-control" id="form-phonenumber" name="form-phonenumber" value="">                        
+                        </div>
+                    </div>
+                    <div class="row mt-1">
+                        <div class="col-4 ml-3 aside"></div>
+                        <div class="input-group col-5">
+                            <div class="hidden" id="phoneNumberRule">
+                                Invalid Phone Number
+                            </div>
+                        </div>
+                    </div>
+                    {{!-- Zipcode --}}
+                    <div class="row mt-3">
+                        <div class="col-4 ml-3 aside">
+                            <label for="form-zipcode">Zipcode</label>
+                        </div>
+                        <div class="input-group col-5">
+                            <input type="text" class="form-control" id="form-zipcode" name="form-zipcode" value="" maxlength="5">
+                        </div>
+                    </div>
+                    <div class="row mt-1">
+                        <div class="col-4 ml-3 aside"></div>
+                        <div class="input-group col-5">
+                            <div class="hidden" id="zipCodeRule">
+                                Invalid Zip Code
+                            </div>
+                        </div>
+                    </div>
+                    {{!-- Address --}}
+                    <div class="row mt-3">
+                        <div class="col-4 ml-3 aside">
+                            <label for="form-address">Address</label>
+                        </div>
+                        <div class="input-group col-5">
+                            <textarea class="form-control" id="form-address" name="form-address"></textarea>
+                        </div>
+                    </div>
+                    {{!-- Submit Button --}}
+                    <div class="row mt-5">
+                        <div class="col-4 ml-3"></div>
+                        <div class="col-5">
+                            <button class="btn btn-primary" type="submit">
+                                Update Now!
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer class="blog-footer">
+        <div class="content">
+            <p>© 2020 Weitao Su. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="./js/user.js"></script>
+</body>
+
+</html>
