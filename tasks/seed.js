@@ -13,71 +13,153 @@ const main = async () => {
 
     // add place
     const place1 = await places.addPlace(
-        'Stevens',
-        'A famous school in New Jersey',
-        '1 Castle Point Terrace, Hoboken',
-        '07310',
-        100,
-        ['University', 'Quiet'],
+        'COFFEE MACHINE',
+        'A business project',
+        '',
+        '',
+        0,
+        ['Machine', 'Project'],
         '2020-05-15',
-        200,
+        0,
         [
-            'Stevens_Institute_Of_Technology_1.jpg',
-            'Stevens_Institute_Of_Technology_2.jpg',
-            'Stevens_Institute_Of_Technology_3.png',
+            './coffee/1.jpg',
+            './coffee/2.jpg',
+            './coffee/3.jpg',
+            './coffee/4.jpg',
+            './coffee/5.png',
+            './coffee/6.png',
+            './coffee/7.png',
+            './coffee/8.png',
         ]
     );
 
     const place2 = await places.addPlace(
-        'Kennedy Space Center',
-        'To discover and expand knowledge for the benefit of humanity.',
-        'Titusville, Florida',
-        '32899',
-        50,
-        ['Building', 'Science', 'Museum'],
-        '2021-02-18',
-        200,
-        ['NASA_1.jpg', 'NASA_2.jpg']
+        'MINI FAN',
+        'My very first design',
+        '',
+        '',
+        0,
+        ['Machine', 'Design'],
+        '2019-02-18',
+        0,
+        [
+            './fan/1.png',
+            './fan/2.png',
+            './fan/3.png',
+            './fan/4.png',
+            './fan/5.png',
+            './fan/6.png',
+            './fan/7.jpg',
+            './fan/8.png',
+            './fan/9.png',
+            './fan/10.jpg',
+            './fan/11.jpg',
+        ]
     );
 
     const place3 = await places.addPlace(
-        'Statue of Liberty',
-        'Iconic National Monument opened in 1886, offering guided tours, a museum & city views.',
-        'Liberty Island Manhattan, New York City, New York,',
-        '10004',
-        59,
-        ['Historical landmark', 'Quiet', 'Shopping'],
+        'HYGEIA',
+        'Make public tap cleaner',
+        '',
+        '',
+        0,
+        ['Design', 'Modal'],
         '2020-06-15',
-        100,
-        ['Statue_Of_Liberty_1.jpg', 'Statue_Of_Liberty_2.jpg']
+        0,
+        [
+            './faucet/1.png',
+            './faucet/2.png',
+            './faucet/3.png',
+            './faucet/4.jpg',
+            './faucet/5.JPG',
+            './faucet/6.jpg',
+            './faucet/7.jpg',
+            './faucet/8.png',
+            './faucet/9.png',
+            './faucet/10.png',
+        ]
     );
 
     const place4 = await places.addPlace(
-        'Universal Studio',
-        'Famous, sprawling amusement park featuring movie-themed rides, attractions & entertainment.',
-        '6000 Universal Blvd, Orlando, FL',
-        '32819',
-        189,
-        ['Theme park', 'Happy', 'Adventure'],
+        'SAR SYSTEM DESIGN',
+        'Search & Rescue system for earthquake',
+        '',
+        '',
+        0,
+        ['Machine', 'Project'],
         '2020-09-17',
-        50,
+        0,
         [
-            'Universal_Studio_1.jpg',
-            'Universal_Studio_2.jpg',
-            'Universal_Studio_3.jpg',
+            './SAR/1.png',
+            './SAR/2.png',
+            './SAR/3.png',
+            './SAR/4.png',
+            './SAR/5.png',
+            './SAR/6.png',
+            './SAR/7.png',
+            './SAR/8.png',
         ]
     );
 
     const place5 = await places.addPlace(
-        'Empire State Building',
-        'Iconic, art deco office tower from 1931 with exhibits & observatories on the 86th & 102nd floors',
-        '20 W 34th St, New York, NY',
-        '10001',
-        20,
-        ['Historical landmark', 'Quiet', 'Building'],
+        'K-HOLEDER',
+        'For knives, for better kitchen',
+        '',
+        '',
+        0,
+        ['Design', 'Modal'],
         '2022-04-27',
-        1000,
-        ['Empire_State_Building_1.jpg', 'Empire_State_Building_2.jpg']
+        0,
+        [
+            './Knife holder/1.png',
+            './Knife holder/2.png',
+            './Knife holder/3.png',
+            './Knife holder/4.png',
+            './Knife holder/5.png',
+            './Knife holder/6.png',
+            './Knife holder/7.png',
+            './Knife holder/8.png',
+        ]
+    );
+
+    const place6 = await places.addPlace(
+        'INFINITE',
+        'A tattoo design',
+        '',
+        '',
+        0,
+        ['Design', 'Tattoo'],
+        '2022-04-27',
+        0,
+        [
+            './Infinite/1.png',
+            './Infinite/2.png',
+            './Infinite/3.jpg',
+            './Infinite/4.png',
+            './Infinite/5.jpg',
+        ]
+    );
+
+    const place7 = await places.addPlace(
+        'INSULNEXT',
+        'A group work in Studio 930',
+        '',
+        '',
+        0,
+        ['Group Work', 'Project'],
+        '2022-04-27',
+        0,
+        [
+            './insulnext/1.png',
+            './insulnext/2.png',
+            './insulnext/3.png',
+            './insulnext/4.png',
+            './insulnext/5.png',
+            './insulnext/6.png',
+            './insulnext/7.png',
+            './insulnext/8.png',
+            './insulnext/9.png',
+        ]
     );
 
     // add user
@@ -93,31 +175,11 @@ const main = async () => {
 
     const admin = await users.addUser('Admin', 'admin@group13.com', 'Qq123456');
 
-    // add friend
-    const friend1 = await friends.addFriend(
-        user1['_id'].toString(),
-        'Yui Hatano',
-        'yuihatano@gmail.com',
-        '5066086790'
-    );
-    const friend2 = await friends.addFriend(
-        user1['_id'].toString(),
-        'Angelina Jolie',
-        'angelinajolie@gmail.com',
-        '5126532367'
-    );
-    const firend3 = await friends.addFriend(
-        user1['_id'].toString(),
-        'Anne Hathaway',
-        'annehathaway@gmail.com',
-        '7276351197'
-    );
-
     // add comment
     const comment1 = await comments.addComment(
         user1['_id'].toString(),
         place1['_id'].toString(),
-        "The view of the city and the campus are beautiful. The cafeteria has improved. However, there are a lot of cons at this school. The library has been renovated so that there is more space for students to study. However, if you are looking for a quite study space, do not expect to find it here. There are a lot of study groups and project groups that meet in the library and it can be very difficult to concentrate. It is nice that in many classes, you recognize faces and can often find people to study with. However, most teachers are not very good at teaching their subjects and students more often than not, need to learn the material on their own. The free student tutoring center is a great resource to help with this. Furthermore, the staff is horrible. If I have an issue that needs addressing, I can call the same person multiple times in a day, a few days in a row and rarely do I get an answer. It is really frustrating especially if you have a very busy schedule and cannot make it up to their offices to speak to them. One of the few redeeming qualities that this school does have is the job placement rate and the expected return on investment. But honestly, if I had the chance now to have done it over again or picked another school, I'm not sure that the job placement rate and the ROI could have been enough to convince me to come back."
+        'The view of the city and the campus are beautiful. The cafeteria has improved. However, there are a lot of cons at this school. The library has been renovated so that there is more space for students to study. However, if you are looking for a quite study space, do not expect to find it here. There are a lot of study groups and project groups that meet in the library and it can be very difficult to concentrate. It is nice that in many classes, you recognize faces and can often find people to study with. However, most teachers are not very good at teaching their subjects and students more often than not, need to learn the material on their own. The free student tutoring center is a great resource to help with this. Furthermore, the staff is horrible. If I have an issue that needs addressing, I can call the same person multiple times in a day, a few days in a row and rarely do I get an answer. It is really frustrating especially if you have a very busy schedule and cannot make it up to their offices to speak to them. One of the few redeeming qualities that this school does have is the job placement rate and the expected return on investment. But honestly, if I had the chance now to have done it over again or picked another school, I'm not sure that the job placement rate and the ROI could have been enough to convince me to come back.'
     );
     const comment2 = await comments.addComment(
         user2['_id'].toString(),
@@ -168,17 +230,6 @@ const main = async () => {
         user5['_id'].toString(),
         place5['_id'].toString(),
         'It really is spectacular. The building just breathes history. Amazing new lobby/museum where you can learn some facts from the past. Also very interactive. People running working there are just a joy. They really love what they are doing. And once you get to the top, it truly is breathtaking.'
-    );
-
-    // add bank card
-    const bank = await banks.addBank(
-        user1['_id'].toString(),
-        'Group',
-        '13',
-        '07302',
-        '4916611922198808',
-        '10/21',
-        '624'
     );
 
     console.log('Done seeding database');

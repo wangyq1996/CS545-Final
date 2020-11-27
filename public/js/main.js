@@ -64,7 +64,8 @@ const renderDetail = async (placeId) => {
                 </div>
                 <div class="modal-body">
                     <div class="container row">
-                        <div class="placeDetail col-md-7">
+                        <div class="col"></div>
+                        <div class="placeDetail col-10">
                             <div id="carousel" class="carousel slide" data-ride="carousel">
                                 <ol class="carousel-indicators" id="carousel-indicators">
 
@@ -86,12 +87,15 @@ const renderDetail = async (placeId) => {
                                 <span>${place.displayTime}</span>
                             </div>
                         </div>
-                        <div class="wrapper col-md-5">
-                            <form class="comment" id="commentForm">
-                                <div class="commentContainer">
-                                    <h2 class="h5">Comments</h2>
-                                    <ul id="commentList"></ul>
-                                </div>
+                        <div class="col"></div>
+                    </div>
+                    <div class="container row">
+                        <div class="col"></div>
+                        <div class="wrapper col-10">
+                            <div class="commentContainer">
+                                <ul id="commentList"></ul>
+                            </div>
+                            <form class="comment" id="commentForm">  
                                 <div class="inputContainer">
                                     <label class="sr-only" for="commentInput"></label>
                                     <input class="form-control" type="text" name="commentInput" id="commentInput" placeholder="Add a comment"></input>
@@ -101,6 +105,7 @@ const renderDetail = async (placeId) => {
                                 </div>
                             </form>
                         </div>
+                        <div class="col"></div>
                     </div>
                 </div>
                 <div class="modal-footer">

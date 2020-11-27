@@ -139,12 +139,75 @@ header .top-btn {
   background-color: #0072ee;
 }
 
+.modal-dialog {
+  width: 60vw;
+}
+
 #detailModal .placeDetail img {
-  height: 650px;
+  height: 48vh;
 }
 
 #detailModal .placeDetail .attribute {
   font-weight: bold;
+}
+
+#detailModal .wrapper .commentContainer h2 {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 0;
+  padding-bottom: 10px;
+}
+
+#detailModal .wrapper .commentContainer ul {
+  max-height: 18vh;
+  overflow: scroll;
+}
+
+#detailModal .wrapper .commentContainer ul li {
+  border-bottom: 1px solid #ccc;
+  padding: 8px 0;
+}
+
+#detailModal .wrapper .commentContainer ul li .username {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#detailModal .wrapper .commentContainer ul li .username:hover {
+  color: #999;
+}
+
+#detailModal .wrapper .commentContainer ul li .voteIcons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#detailModal .wrapper .commentContainer ul li .voteIcons .upvote {
+  margin-right: 20px;
+}
+
+#detailModal .wrapper .commentContainer ul li .voteIcons .upvote i {
+  background: url("../pic/upvote.png");
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+#detailModal .wrapper .commentContainer ul li .voteIcons .downvote i {
+  background: url("../pic/downvote.png");
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+#detailModal .wrapper .commentContainer ul li .voteIcons.upvote .upvote i {
+  background: url("../pic/upvote-hover.png");
+}
+
+#detailModal .wrapper .commentContainer ul li .voteIcons.downvote .downvote i {
+  background: url("../pic/downvote-hover.png");
 }
 
 #detailModal .wrapper .comment {
@@ -159,65 +222,6 @@ header .top-btn {
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 100%;
-}
-
-#detailModal .wrapper .comment .commentContainer h2 {
-  border-bottom: 1px solid #ccc;
-  margin-bottom: 0;
-  padding-bottom: 10px;
-}
-
-#detailModal .wrapper .comment .commentContainer ul {
-  max-height: 600px;
-  overflow: scroll;
-}
-
-#detailModal .wrapper .comment .commentContainer ul li {
-  border-bottom: 1px solid #ccc;
-  padding: 8px 0;
-}
-
-#detailModal .wrapper .comment .commentContainer ul li .username {
-  font-weight: bold;
-  cursor: pointer;
-}
-
-#detailModal .wrapper .comment .commentContainer ul li .username:hover {
-  color: #999;
-}
-
-#detailModal .wrapper .comment .commentContainer ul li .voteIcons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-#detailModal .wrapper .comment .commentContainer ul li .voteIcons .upvote {
-  margin-right: 20px;
-}
-
-#detailModal .wrapper .comment .commentContainer ul li .voteIcons .upvote i {
-  background: url("../pic/upvote.png");
-  width: 16px;
-  height: 16px;
-  cursor: pointer;
-  display: inline-block;
-}
-
-#detailModal .wrapper .comment .commentContainer ul li .voteIcons .downvote i {
-  background: url("../pic/downvote.png");
-  width: 16px;
-  height: 16px;
-  cursor: pointer;
-  display: inline-block;
-}
-
-#detailModal .wrapper .comment .commentContainer ul li .voteIcons.upvote .upvote i {
-  background: url("../pic/upvote-hover.png");
-}
-
-#detailModal .wrapper .comment .commentContainer ul li .voteIcons.downvote .downvote i {
-  background: url("../pic/downvote-hover.png");
 }
 
 #detailModal .wrapper .comment .inputContainer {
